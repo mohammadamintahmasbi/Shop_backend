@@ -19,7 +19,7 @@ import os
 env = environ.Env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-APPS_DIR = BASE_DIR / "shopify"
+APPS_DIR = BASE_DIR / "shopify_apps"
 
 env.read_env(os.path.join(BASE_DIR, "env/dev.env"))
 # Quick-start development settings - unsuitable for production
@@ -42,7 +42,9 @@ THIRD_PARTY_APPS = [
     
 ]
 
-LOCAL_APPS = []
+LOCAL_APPS = [
+    "shopify_apps.users",
+]
 
 
 INSTALLED_APPS = [
@@ -67,6 +69,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Shopify.urls'
+
+MEDIA_ROOT = str(APPS_DIR / "media")
+# https://docs.djangoproject.com/en/dev/ref/settings/#media-url
+MEDIA_URL = "/media/"
+
 
 TEMPLATES = [
     {
@@ -131,6 +138,9 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+AUTH_USER_MODEL = 'users.User'
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
@@ -152,3 +162,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# SIMPLE_JWT = {
+#     'REFRESH_TOKEN_LIFETIME': timedelta(days=30),
+#     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
+
+# }
