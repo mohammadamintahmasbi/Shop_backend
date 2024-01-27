@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("users/", include("shopify_apps.users.urls")),
     path("item/", include("shopify_apps.item.urls")),
+    path("shoppingcart/", include("shopify_apps.shoppingcart.urls")),
     path('api/docs/schema', SpectacularAPIView.as_view(), name='schema'),
     path('api/docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
     path('api/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
