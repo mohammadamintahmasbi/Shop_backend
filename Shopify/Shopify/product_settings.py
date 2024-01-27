@@ -44,6 +44,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     "shopify_apps.users",
+    "shopify_apps.item",
 ]
 
 
