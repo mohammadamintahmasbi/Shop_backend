@@ -8,12 +8,12 @@ from .serializers import MobileSerializer, LaptopSerializer
 class CreateMobileView(CreateAPIView):
     queryset = Mobile.objects.all()
     serializer_class = MobileSerializer
-    permission_classes = [IsAdminUser]
+    permission_classes = [AllowAny]
     
 class CreateLaptopView(CreateAPIView):
     queryset = Laptop.objects.all()
     serializer_class = LaptopSerializer
-    permission_classes = [IsAdminUser]
+    permission_classes = [AllowAny]
     
 class ListMobileView(ListAPIView):
     queryset = Mobile.objects.all()
@@ -29,7 +29,7 @@ class DeleteMobileView(DestroyAPIView):
     lookup_field = "slug"
     queryset = Mobile.objects.all()
     serializer_class = MobileSerializer
-    permission_classes = [IsAdminUser]
+    # permission_classes = [IsAdminUser]
 
 class DeleteLaptopView(DestroyAPIView):
     lookup_field = "slug"
@@ -41,13 +41,13 @@ class GetMobileView(RetrieveAPIView):
     lookup_field = "slug"
     queryset = Mobile.objects.all()
     serializer_class = MobileSerializer
-    permission_classes = [AllowAny]
+    # permission_classes = [AllowAny]
 
 class GetLaptopView(RetrieveAPIView):
     lookup_field = "slug"
     queryset = Laptop.objects.all()
     serializer_class = LaptopSerializer
-    permission_classes = [AllowAny]
+    # permission_classes = [AllowAny]
 
 class UpdateMobileView(UpdateAPIView):
     lookup_field = "slug"
