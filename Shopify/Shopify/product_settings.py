@@ -73,7 +73,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:4040',
+    'http://localhost:4200',
 ]
 
 ROOT_URLCONF = 'Shopify.urls'

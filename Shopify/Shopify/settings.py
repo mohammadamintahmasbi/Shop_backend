@@ -39,7 +39,7 @@ ALLOWED_HOSTS = []
 THIRD_PARTY_APPS = [
     'rest_framework',
     'drf_spectacular',
-    
+    'corsheaders',
 ]
 
 LOCAL_APPS = [
@@ -68,6 +68,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:4200',
 ]
 
 ROOT_URLCONF = 'Shopify.urls'
